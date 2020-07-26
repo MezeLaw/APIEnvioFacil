@@ -100,7 +100,7 @@ public class UserDetailsImpl implements UserDetails {
 		return authorities;
 	}
 	
-	/** Este metodo es magiaaa xd ndeahh */
+	/** Este metodo es magiaaa, ni se sabe que hace. */
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
