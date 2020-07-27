@@ -1,6 +1,5 @@
 package com.mz.APIEnvioFacil.security.jwt;
 
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -22,7 +21,15 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
 		logger.error("Unauthorized error: {}", authException.getMessage());
-		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
+
+		if (authException.getMessage().equals("Bad credentials")) {
+
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Email o contraseña incorrectos.");
+		} else {
+
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: No autorizado.");
+		}
+
 	}
 
 }

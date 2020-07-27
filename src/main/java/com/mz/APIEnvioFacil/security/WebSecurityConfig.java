@@ -9,16 +9,14 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetails; 
+import org.springframework.security.config.http.SessionCreationPolicy; 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.mz.APIEnvioFacil.security.jwt.AuthEntryPointJwt;
 import com.mz.APIEnvioFacil.security.jwt.AuthTokenFilter;
-import com.mz.APIEnvioFacil.security.services.MyUserDetailsService;
-import com.mz.APIEnvioFacil.security.services.UserDetailsServiceImpl;
+import com.mz.APIEnvioFacil.security.services.MyUserDetailsService; 
 
 @Configuration
 @EnableWebSecurity
