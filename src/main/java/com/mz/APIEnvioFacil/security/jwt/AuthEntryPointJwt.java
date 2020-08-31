@@ -22,7 +22,11 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 			AuthenticationException authException) throws IOException, ServletException {
 		logger.error("Unauthorized error: {}", authException.getMessage());
 
-		if (authException.getMessage().equals("Bad credentials")) {
+		if (authException.getMessage() == null ) {
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "No existe una cuenta registrada para el email.");
+		}
+
+		else if (authException.getMessage().equals("Bad credentials")) {
 
 			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Email o contraseña incorrectos.");
 		} else {
